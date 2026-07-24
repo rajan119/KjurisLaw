@@ -40,7 +40,7 @@ function DesktopSubmenu({ items }: { items: MenuItem[] }) {
             onMouseLeave={() => setOpenIndex(null)}
           >
             <a
-              href={item.href ?? "#"}
+              href={item.href ?? ""}
               className={cn(
                 "flex items-center justify-between gap-3 border-b border-white/5 px-5 py-3 text-sm leading-snug transition-colors",
                 isOpen ? "text-navbar-accent" : "text-navbar-foreground hover:text-navbar-accent",
