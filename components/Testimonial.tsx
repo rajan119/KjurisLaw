@@ -11,25 +11,16 @@ const testimonials = [
     quote:
       "A firm you can rely on for legal solutions. Kjuris Law provided me with sound, clear and practical legal advice. I'm grateful for your passion, dedication and professionalism. Would definitely recommend them for any legal solutions.",
     image:
-      "https://images.unsplash.com/photo-1618077360395-f3068be8e001?q=80&w=800&auto=format&fit=crop",
+      "./assets/testinomialmanimg.png",
   },
   {
     id: "02",
     name: "Priya Sharma",
     role: "Corporate Case",
     quote:
-      "Professional, prompt and precise. The team walked me through every step of a complex corporate dispute and made sure I understood my options. Their guidance made a stressful situation feel manageable.",
+      "Excellent team of advocates led by Kjuris Law. Professionally managed firm, quick and efficient. Thanks to Key Aspects for the legal input.",
     image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: "03",
-    name: "Rohan Mehta",
-    role: "Family Case",
-    quote:
-      "Compassionate yet sharp. They handled a sensitive family matter with the right balance of empathy and legal rigor. I always felt heard, and the outcome exceeded my expectations.",
-    image:
-      "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop",
+      "./assets/testiimg.png",
   },
 ];
 

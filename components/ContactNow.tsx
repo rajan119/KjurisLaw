@@ -9,6 +9,7 @@ export default function ContactNow() {
   };
 
   return (
+    <section className="bg-white">
     <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2">
       {/* LEFT PANEL */}
       <div className="bg-[#f4f3f0] p-[70px_60px] max-lg:p-[50px_24px]">
@@ -93,17 +94,18 @@ export default function ContactNow() {
         </div>
 
         {/* Photo */}
-        <div className="w-full aspect-[600/560] overflow-hidden bg-[#54565c]">
-          <Image
-            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1000&auto=format&fit=crop"
-            alt="Legal professional holding documents"
-            width={600}
-            height={560}
-            className="w-full h-full object-cover"
-            priority
-          />
-        </div>
+ <div className="w-full aspect-[700/960] overflow-hidden rounded-2xl ">
+    <Image
+      src="/assets/indiancontact-removebg-preview.png"
+      alt="Legal professional holding documents"
+      width={600}
+      height={560}
+      className="w-100 h-auto  object-center float-right"
+      priority
+    />
+  </div>
       </div>
     </div>
+    </section>
   );
 }

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    // ✅ Ensure entire page background is white
+    //  Ensure entire page background is white
     <section className="pt-2 bg-white">
     <main className="bg-white">
       {/* Hero section with 20px space below navbar */}
