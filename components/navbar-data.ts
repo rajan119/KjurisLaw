@@ -2,16 +2,18 @@ export type MenuItem = {
   label: string
   href?: string
   children?: MenuItem[]
+  isLabel?: boolean // New property to mark non-clickable items
 }
 
 export const navMenu: MenuItem[] = [
-  { label: "Home", href: "#" },
+  { label: "Home", href: "/" },
   { label: "About Us", href: "about" },
   {
     label: "Business Series",
     children: [
       {
         label: "Banking And Finance",
+        isLabel: true, // This makes it non-clickable
         children: [
           { label: "Commercial Property", href: "Commercialproperty" },
           { label: "Corporate Restructuring & Insolvency", href: "CorporateRestructuringInsolvency" },
@@ -21,6 +23,7 @@ export const navMenu: MenuItem[] = [
       },
       {
         label: "Commercial And Technology",
+         isLabel: true, // This makes it non-clickable
         children: [
           { label: "Commercial Contracts", href: "CommercialContracts" },
           { label: "Data Protection And Privacy", href: "DataProtectionAndPrivacy" },
@@ -33,6 +36,7 @@ export const navMenu: MenuItem[] = [
       },
       {
         label: "Property And Land",
+         isLabel: true, // This makes it non-clickable
         children: [
           { label: "Commercial Lease", href: "CommercialLease" },
           { label: "Commercial Property", href: "Commercialproperty" },
@@ -43,6 +47,7 @@ export const navMenu: MenuItem[] = [
       },
       {
         label: "Corporate",
+         isLabel: true, // This makes it non-clickable
         children: [
           { label: "Company Secretarial Services", href: "CompanySecretarialServices" },
           { label: "Corporate Governance & Company Law Advisory", href: "CorporateGovernanceAndCompanyLawAdvisory" },
@@ -53,6 +58,7 @@ export const navMenu: MenuItem[] = [
       },
       {
         label: "Construction",
+         isLabel: true, // This makes it non-clickable
         children: [
           { label: "Construction Disputes", href: "#" },
           { label: "Commercial Property", href: "#" },
@@ -61,6 +67,7 @@ export const navMenu: MenuItem[] = [
       },
       {
         label: "Employment",
+         isLabel: true, // This makes it non-clickable
         children: [
           { label: "Employment Contract Advice", href: "#" },
           { label: "HR Courses", href: "#" },
@@ -86,6 +93,7 @@ export const navMenu: MenuItem[] = [
       { label: "Agricultural Land And Estates", href: "#" },
       {
         label: "Employment",
+         isLabel: true, // This makes it non-clickable
         children: [
           { label: "Employment Contract Advice", href: "#" },
           { label: "HR Courses", href: "#" },
@@ -97,6 +105,7 @@ export const navMenu: MenuItem[] = [
       },
       {
         label: "Family Law",
+         isLabel: true, // This makes it non-clickable
         children: [
           { label: "Children Law", href: "#" },
           { label: "Cohabitation & Unmarried Couples", href: "#" },

@@ -24,6 +24,46 @@ function Logo() {
 }
 
 /* ---------- Desktop flyout submenu (recursive) ---------- */
+// function DesktopSubmenu({ items }: { items: MenuItem[] }) {
+//   const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+//   return (
+//     <ul className="w-64 bg-navbar py-1 shadow-2xl ring-1 ring-white/10">
+//       {items.map((item, i) => {
+//         const hasChildren = !!item.children?.length
+//         const isOpen = openIndex === i
+//         const isLabel = item.isLabel === true // Check if it's a label
+
+//         return (
+//           <li
+//             key={item.label + i}
+//             className="relative"
+//             onMouseEnter={() => setOpenIndex(i)}
+//             onMouseLeave={() => setOpenIndex(null)}
+//           >
+//             <a
+//               href={item.href ?? ""}
+//               className={cn(
+//                 "flex items-center justify-between gap-3 border-b border-white/5 px-5 py-3 text-sm leading-snug transition-colors",
+//                 isOpen ? "text-navbar-accent" : "text-navbar-foreground hover:text-navbar-accent",
+//               )}
+//             >
+//               <span className="text-pretty">{item.label}</span>
+//               {hasChildren && <ChevronRight className="size-4 shrink-0" aria-hidden="true" />}
+//             </a>
+
+//             {hasChildren && isOpen && (
+//               <div className="absolute left-full top-0">
+//                 <DesktopSubmenu items={item.children!} />
+//               </div>
+//             )}
+//           </li>
+//         )
+//       })}
+//     </ul>
+//   )
+// }
+/* ---------- Desktop flyout submenu (recursive) ---------- */
 function DesktopSubmenu({ items }: { items: MenuItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
@@ -32,6 +72,8 @@ function DesktopSubmenu({ items }: { items: MenuItem[] }) {
       {items.map((item, i) => {
         const hasChildren = !!item.children?.length
         const isOpen = openIndex === i
+        const isLabel = item.isLabel === true // Check if it's a label
+
         return (
           <li
             key={item.label + i}
@@ -39,16 +81,30 @@ function DesktopSubmenu({ items }: { items: MenuItem[] }) {
             onMouseEnter={() => setOpenIndex(i)}
             onMouseLeave={() => setOpenIndex(null)}
           >
-            <a
-              href={item.href ?? ""}
-              className={cn(
-                "flex items-center justify-between gap-3 border-b border-white/5 px-5 py-3 text-sm leading-snug transition-colors",
-                isOpen ? "text-navbar-accent" : "text-navbar-foreground hover:text-navbar-accent",
-              )}
-            >
-              <span className="text-pretty">{item.label}</span>
-              {hasChildren && <ChevronRight className="size-4 shrink-0" aria-hidden="true" />}
-            </a>
+            {isLabel ? (
+              // 🔥 Non-clickable label - uses span instead of a
+              <span
+                className={cn(
+                  "flex items-center justify-between gap-3 border-b border-white/5 px-5 py-3 text-sm leading-snug cursor-default",
+                  isOpen ? "text-navbar-accent" : "text-navbar-foreground",
+                )}
+              >
+                <span className="text-pretty font-semibold">{item.label}</span>
+                {hasChildren && <ChevronRight className="size-4 shrink-0" aria-hidden="true" />}
+              </span>
+            ) : (
+              // Clickable item - uses a tag
+              <a
+                href={item.href ?? ""}
+                className={cn(
+                  "flex items-center justify-between gap-3 border-b border-white/5 px-5 py-3 text-sm leading-snug transition-colors",
+                  isOpen ? "text-navbar-accent" : "text-navbar-foreground hover:text-navbar-accent",
+                )}
+              >
+                <span className="text-pretty">{item.label}</span>
+                {hasChildren && <ChevronRight className="size-4 shrink-0" aria-hidden="true" />}
+              </a>
+            )}
 
             {hasChildren && isOpen && (
               <div className="absolute left-full top-0">
@@ -61,7 +117,6 @@ function DesktopSubmenu({ items }: { items: MenuItem[] }) {
     </ul>
   )
 }
-
 /* ---------- Desktop top-level item ---------- */
 function DesktopNavItem({ item }: { item: MenuItem }) {
   const [open, setOpen] = useState(false)
@@ -102,9 +157,49 @@ function DesktopNavItem({ item }: { item: MenuItem }) {
 }
 
 /* ---------- Mobile accordion (recursive) ---------- */
+// function MobileNavItem({ item, depth = 0 }: { item: MenuItem; depth?: number }) {
+//   const [open, setOpen] = useState(false)
+//   const hasChildren = !!item.children?.length
+
+//   if (!hasChildren) {
+//     return (
+//       <a
+//         href={item.href ?? "#"}
+//         className="block py-3 text-sm text-navbar-foreground hover:text-navbar-accent"
+//         style={{ paddingLeft: depth * 16 }}
+//       >
+//         {item.label}
+//       </a>
+//     )
+//   }
+
+//   return (
+//     <div>
+//       <button
+//         type="button"
+//         onClick={() => setOpen((v) => !v)}
+//         aria-expanded={open}
+//         className="flex w-full items-center justify-between py-3 text-left text-sm font-medium text-navbar-foreground hover:text-navbar-accent"
+//         style={{ paddingLeft: depth * 16 }}
+//       >
+//         <span className="text-pretty">{item.label}</span>
+//         <ChevronDown className={cn("size-4 transition-transform", open && "rotate-180")} aria-hidden="true" />
+//       </button>
+//       {open && (
+//         <div className="border-l border-white/10">
+//           {item.children!.map((child, i) => (
+//             <MobileNavItem key={child.label + i} item={child} depth={depth + 1} />
+//           ))}
+//         </div>
+//       )}
+//     </div>
+//   )
+// }
+/* ---------- Mobile accordion (recursive) ---------- */
 function MobileNavItem({ item, depth = 0 }: { item: MenuItem; depth?: number }) {
   const [open, setOpen] = useState(false)
   const hasChildren = !!item.children?.length
+  const isLabel = item.isLabel === true
 
   if (!hasChildren) {
     return (
@@ -120,16 +215,28 @@ function MobileNavItem({ item, depth = 0 }: { item: MenuItem; depth?: number }) 
 
   return (
     <div>
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        className="flex w-full items-center justify-between py-3 text-left text-sm font-medium text-navbar-foreground hover:text-navbar-accent"
-        style={{ paddingLeft: depth * 16 }}
-      >
-        <span className="text-pretty">{item.label}</span>
-        <ChevronDown className={cn("size-4 transition-transform", open && "rotate-180")} aria-hidden="true" />
-      </button>
+      {isLabel ? (
+        // 🔥 Non-clickable label in mobile
+        <div
+          className="flex w-full items-center justify-between py-3 text-left text-sm font-medium text-navbar-foreground cursor-default"
+          style={{ paddingLeft: depth * 16 }}
+          onClick={() => setOpen((v) => !v)} // Still allows toggling submenu
+        >
+          <span className="text-pretty font-semibold">{item.label}</span>
+          <ChevronDown className={cn("size-4 transition-transform", open && "rotate-180")} aria-hidden="true" />
+        </div>
+      ) : (
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          className="flex w-full items-center justify-between py-3 text-left text-sm font-medium text-navbar-foreground hover:text-navbar-accent"
+          style={{ paddingLeft: depth * 16 }}
+        >
+          <span className="text-pretty">{item.label}</span>
+          <ChevronDown className={cn("size-4 transition-transform", open && "rotate-180")} aria-hidden="true" />
+        </button>
+      )}
       {open && (
         <div className="border-l border-white/10">
           {item.children!.map((child, i) => (
