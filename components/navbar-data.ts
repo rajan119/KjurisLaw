@@ -85,7 +85,7 @@ export const navMenu: MenuItem[] = [
     children: [
       { label: "Charity Forum", href: "#" },
       { label: "Charity Law", href: "#" },
-    ],
+    ],   
   },
   {
     label: "Your Life Services",

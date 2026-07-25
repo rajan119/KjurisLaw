@@ -6,10 +6,10 @@ import Image from "next/image";
 export default function Hero() {
   return (
     // ✅ Ensure entire page background is white
-    <section className="pt-4 bg-white">
+    <section className="pt-2 bg-white">
     <main className="bg-white">
       {/* Hero section with 20px space below navbar */}
-      <section className="relative flex h-[700px] w-full items-center overflow-hidden md:h-[780px] lg:h-[900px] mt-[20px] bg-white">
+      <section className="relative flex h-[700px] w-full items-center overflow-hidden md:h-[780px] lg:h-[900px] mt-[1px] bg-white">
         
         {/* White box wrapper with fixed 70px gap */}
         <div className="absolute inset-0 mx-[70px] bg-white overflow-hidden">
@@ -56,17 +56,46 @@ export default function Hero() {
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <button
-              className="font-inter group inline-flex h-14 w-[180px] items-center justify-center gap-3 rounded-[2px] text-[18px] font-semibold text-[#111111] shadow-[0_15px_35px_rgba(215,154,43,0.30)] transition-all duration-300 hover:-translate-y-[3px] hover:scale-[1.02] md:h-16 md:w-[210px] md:text-[20px]"
-              style={{ background: "#D79A2B" }}
-              onMouseOver={(e) => (e.currentTarget.style.background = "#C98A1D")}
-              onMouseOut={(e) => (e.currentTarget.style.background = "#D79A2B")}
-            >
-              <span className="h-[2px] w-[26px] bg-[#111111]"></span>
-              Practice Area
-            </button>
-          </motion.div>
+          ><motion.button
+  className="font-inter group relative inline-flex h-14 w-[180px] items-center justify-center gap-3 overflow-hidden rounded-[2px] text-[18px] font-semibold text-[#111111] transition-all duration-300 cursor-pointer md:h-16 md:w-[210px] md:text-[20px]"
+  style={{ background: "#D79A2B" }}
+  onMouseOver={(e) => (e.currentTarget.style.background = "#C98A1D")}
+  onMouseOut={(e) => (e.currentTarget.style.background = "#D79A2B")}
+  whileHover="hover"
+  initial="initial"
+>
+  {/* Animated Black Overlay with Framer Motion */}
+  <motion.span
+    className="absolute inset-0 bg-black"
+    variants={{
+      initial: { scaleX: 0 },
+      hover: { scaleX: 1 },
+    }}
+    transition={{ duration: 0.5, ease: 'easeInOut' }}
+    style={{ originX: 0.5 }}
+  />
+  
+  {/* Content - stays on top, turns white on hover */}
+  <motion.span
+    className="relative z-10 flex items-center gap-3"
+    variants={{
+      initial: { color: "#111111" },
+      hover: { color: "#ffffff" },
+    }}
+    transition={{ duration: 0.3, ease: 'easeInOut' }}
+  >
+    <motion.span
+      className="h-[2px] w-[26px] bg-[#111111]"
+      variants={{
+        initial: { backgroundColor: "#111111" },
+        hover: { backgroundColor: "#ffffff" },
+      }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
+    />
+    Practice Area
+  </motion.span>
+</motion.button>
+  </motion.div>
         </div>
 
         {/* Left full-height line with 30px gap */}

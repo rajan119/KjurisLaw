@@ -15,20 +15,16 @@ export default function Page() {
         <Navbar />
         <Hero />
         <StatsNumbered />
-         <HomePage />
-         <main className="min-h-screen bg-background">
-                   <main className="min-h-screen bg-[#fbfaf7] py-[70px] px-[5vw] flex items-center justify-center font-['Nunito_Sans']">
+         <main className="min-h-screen bg-[#fbfaf7] py-[70px] px-[5vw] flex items-center justify-center font-['Nunito_Sans']">
               <AboutKJuris />
             </main>
-              </main>
-             <main className="min-h-screen bg-white flex items-center justify-center p-[40px_20px] font-['Nunito_Sans']">
+         <HomePage />
       <ContactNow />
       
     </main>
     <Testimonial />
     <Latestarticle />
         <Footer />
-      </main>
     </>
   );
 }
