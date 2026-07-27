@@ -60,9 +60,9 @@ export const navMenu: MenuItem[] = [
         label: "Construction",
          isLabel: true, // This makes it non-clickable
         children: [
-          { label: "Construction Disputes", href: "#" },
-          { label: "Commercial Property", href: "#" },
-          { label: "Planning Consultants And Planning Law", href: "#" },
+          { label: "Construction Disputes", href: "ConstructionDisputes" },
+          { label: "Commercial Property", href: "Commercialproperty" },
+          { label: "Planning Consultants And Planning Law", href: "PlanningConsultants&PlanningLaw" },
         ],
       },
       {
