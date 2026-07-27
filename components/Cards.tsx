@@ -59,7 +59,7 @@ export default function StatsBar() {
             style={{ backgroundColor: "#2f4a80" }}
             className={`
               text-center px-5 py-10 sm:py-[55px] relative rounded-2xl sm:rounded-none 
-              overflow-hidden cursor-default transition-transform duration-300 hover:-translate-y-1
+              overflow-hidden cursor-default
               ${i !== 0 ? "sm:before:content-[''] sm:before:absolute sm:before:left-0 sm:before:top-2 sm:before:bottom-2 sm:before:w-px sm:before:bg-white/15" : ""}
             `}
             whileHover="hover"

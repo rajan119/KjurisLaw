@@ -36,13 +36,12 @@ export default function BestExperience() {
   
     return (
       <section className="bg-white">
-        <div className="max-w-[1300px] mx-auto px-6 py-[70px] grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-[70px] items-center">
+        <div className="max-w-[1300px] mx-auto px-6  py-[70px] grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-[70px] items-center">
           {/* ========== LEFT: IMAGE ========== */}
           <div className="relative max-w-[460px] mx-auto md:mx-0">
             <div
-              className="absolute z-0 rounded-[26px]"
+              className="absolute z-0 rounded-[27px]"
               style={{
-                backgroundColor: "#2a2a2e",
                 top: 60,
                 left: 40,
                 right: -24,
@@ -50,10 +49,10 @@ export default function BestExperience() {
               }}
             />
             <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+              src="/assets/aboutpageimg.png"
               alt="Senior lawyer at his desk"
-              className="relative z-10 w-full block rounded-[26px] object-cover"
-              style={{ aspectRatio: "4 / 4.6" }}
+              className="relative z-10 w-full block rounded-[26px] object-cover "
+              style={{ aspectRatio: "5 / 4.8" }}
             />
           </div>
   
