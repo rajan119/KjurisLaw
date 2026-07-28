@@ -69,7 +69,7 @@ export const navMenu: MenuItem[] = [
         label: "Employment",
          isLabel: true, // This makes it non-clickable
         children: [
-          { label: "Employment Contract Advice", href: "#" },
+          { label: "Employment Contract Advice", href: "EmploymentContractAdvice" },
           { label: "HR Courses", href: "#" },
           { label: "Managing Mental Ill Health", href: "#" },
           { label: "Performance Management", href: "#" },
