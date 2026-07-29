@@ -70,21 +70,21 @@ export const navMenu: MenuItem[] = [
          isLabel: true, // This makes it non-clickable
         children: [
           { label: "Employment Contract Advice", href: "EmploymentContractAdvice" },
-          { label: "HR Courses", href: "#" },
-          { label: "Managing Mental Ill Health", href: "#" },
-          { label: "Performance Management", href: "#" },
-          { label: "Redundancies", href: "#" },
-          { label: "Tribunal Representation", href: "#" },
+          { label: "HR Courses", href: "HRCoursesIndividualPlaces" },
+          { label: "Managing Mental Ill Health", href: "ManagingMentalIllHealth" },
+          { label: "Performance Management", href: "PerformanceManagement" },
+          { label: "Redundancies", href: "Redundancies" },
+          { label: "Tribunal Representation", href: "TribunalRepresentation" },
         ],
       },
-      { label: "Debt Recovery Services", href: "#" },
+      { label: "Debt Recovery Services", href: "DebtRecoveryServices" },
     ],
   },
   {
     label: "Charity Services",
     children: [
-      { label: "Charity Forum", href: "#" },
-      { label: "Charity Law", href: "#" },
+      { label: "Charity Forum", href: "CharityForum" },
+      { label: "Charity Law", href: "CharityLaw" },
     ],   
   },
   {
