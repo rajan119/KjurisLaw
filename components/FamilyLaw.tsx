@@ -5,17 +5,17 @@ export default function FamilyLaw() {
     {
       name: "Nagendra Mishra",
       role: "Technical Director",
-      img: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=800&auto=format&fit=crop",
+      img: "",
     },
     {
       name: "Dinesh Abhe",
       role: "Family Lawyer",
-      img: "https://images.unsplash.com/photo-1603415526960-f7e0328fef8c?q=80&w=800&auto=format&fit=crop",
+      img: "",
     },
     {
       name: "Shahabuddin Islam",
       role: "Property Lawyer",
-      img: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=800&auto=format&fit=crop",
+      img: "",
     },
   ];
 
