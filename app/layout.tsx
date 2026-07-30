@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: "KjurisLaw",
-  description: "KjurisLaw - Legal Services Platform",
+  title: 'KjurisLaw',
+  description: 'KjurisLaw - Legal Services Platform',
 }
 
 export const viewport: Viewport = {
@@ -17,9 +17,9 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en" className="bg-background">
       <body className="antialiased">
