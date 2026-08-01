@@ -276,7 +276,7 @@ export function Navbar() {
         <div className="flex items-center gap-6">
           <Logo />
           <a
-            href="#"
+            href="/BookAConsultation"
             className="hidden items-center gap-2 bg-navbar-accent px-6 py-4 text-[15px] font-semibold text-navbar-cta-foreground transition-opacity hover:opacity-90 md:inline-flex"
           >
             <span aria-hidden="true">—</span> Book A Consultation
@@ -293,7 +293,7 @@ export function Navbar() {
             </div>
           ))}
           <a
-            href="#"
+            href="/BookAConsultation"
             className="mt-4 inline-flex items-center gap-2 bg-navbar-accent px-6 py-3 text-sm font-semibold text-navbar-cta-foreground"
           >
             <span aria-hidden="true">—</span> Book A Consultation

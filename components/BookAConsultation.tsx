@@ -194,6 +194,7 @@ export default function BookConsultation() {
   };
 
   return (
+    <section className="bg-white">
     <div>
       {/* Hero image */}
       <div className="w-full">
@@ -431,17 +432,10 @@ export default function BookConsultation() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 mt-6 text-xs text-gray-500 hover:text-gray-700"
           >
-            <span className="uppercase tracking-wide">Powered by</span>
-            <span className="inline-flex items-center gap-1 font-semibold text-blue-600">
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <rect x="3" y="4" width="18" height="17" rx="2" />
-                <path d="M3 9h18M8 3v3M16 3v3" />
-              </svg>
-              TidyCal
-            </span>
           </a>
         </div>
       </div>
     </div>
+    </section>
   );
 }
